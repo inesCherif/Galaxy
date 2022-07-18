@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(#200016,#10001f);
+    height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    display: flex; /*to make each element in header next to other elements also in header*/
+    justify-content: space-between; /*to separate between elements in header after using display:flex;*/
+    align-items: center; /*also use it with display flex to make elements in the center compared to the top and bottom of the space in which header takes*/
+    margin: 30px;
+}
+header .logo{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+header ul li{
+    margin-right: 30px;
+}
+header ul li a{
+    padding: 6px 15px ; /*this padding is for the "header ul li a:hover"(after this) if we don't use it the white rectangle in wich it shows whenerver we hover a gonna be smaller */
+    border-radius: 20px;
+}
+header ul li a:hover{
+    background: #fff;
+    color: #200016;
+}
+.main{ 
+    /*donating postion relative to the parent element and the sons position absolute makes dimension of the son's parent elements modified according to the parent element */
+    position: relative;
+    height: 100vh; /*height of the screen*/
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.main::after{
+    content:'';
+    position: absolute; 
+    bottom: -60;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to top,#200016,transparent); 
+}
+.main img{
+    position:absolute;
+    width: 100%;
+    height: 110vh;
+    object-fit: cover; 
+}
+#moon{
+    mix-blend-mode: screen;/*mixing colors and make it harmonic with the parent*/
+    transform: translateY(80px);
+}
+.Galaxy{
+    color: white;
+    font-size: 25px;
+    text-transform: uppercase;
+    transform: translateY(-150px);
+}
+.content{
+    color: white;
+    padding: 30px;
+    margin-top: 30px;
+}
+.content h2{
+    margin: 40px;
+    font-size: 30px;
+}
+.content p{
+    margin: 20px;
+}
